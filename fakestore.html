@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body onload="bodyload()">
+    
+    <div class="container-fluid">
+
+        <header class="d-flex justify-content-between p-2 mt-2 bg-light border border-1">
+            <div>
+<button  class="bi bi-justify btn btn-info text-white" data-bs-toggle="offcanvas" data-bs-target="#menu"><span class="fs-5 fw-bold">FakeStore.</span></button>
+            </div>
+            <div class="fs-5">
+                <span class="mx-3"><a href="javascript:LoadProduct('https://fakestoreapi.com/products')" class="text-decoration-none text-dark">Home</a></span>
+                <span class="mx-3"><a href="javascript:LoadProduct('https://fakestoreapi.com/products/category/electronics')"class="text-decoration-none text-dark">Electronics</a></span>
+                <span class="mx-3"><a href="javascript:LoadProduct('https://fakestoreapi.com/products/category/jewelery')" class="text-decoration-none text-dark">Jewelery</a></span>
+                <span class="mx-3"><a href="javascript:LoadProduct(&quot;https://fakestoreapi.com/products/category/men's clothing&quot;)" class="text-decoration-none text-dark">Mens Clothing</a></span>
+                <span class="mx-3"><a href="javascript:LoadProduct(&quot;https://fakestoreapi.com/products/category/women's clothing&quot;)" class="text-decoration-none text-dark">Womens Clothing</a></span>
+            </div>
+            <div>
+                <button onclick="LoadCart()" data-bs-target="#cart" data-bs-toggle="offcanvas" class="btn btn-warning position-relative bi bi-cart4 fs-5"><span id="lblCount" class="badge bg-danger rounded p-1 position-absolute "></span></button>
+            <div class="offcanvas offcanvas-end" id="cart">
+
+                <div class="offcanvas-header">
+                 <h4>Your Cart Items</h4>
+                 <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Title </th>
+                        <th>Photo </th>
+                        <th>Price </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>     
+            </table>
+                </div>
+            </div>
+
+            </div>
+        </header>
+        <section class="mt-4 ">
+            <nav class=" offcanvas offcanvas-start" id="menu">
+                <div class="offcanvas-header">
+                    <h2>FakeStore</h2>
+                    <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+
+                    <label class="form-label fw-bold">Select Category</label>
+                    <div>
+                        <select onchange="CategoryChanged()" class="form-select rounded" id="lstCategories"></select>
+                    </div>
+                </div>
+            </nav>
+            <main class="d-flex flex-wrap overflow-auto" style="height: 500px;">
+            
+            </main>
+        </section>
+
+
+    </div>
+
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/fakestore.js"></script>
+</body>
+</html>
